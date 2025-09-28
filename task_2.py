@@ -1,0 +1,12 @@
+import re
+
+
+def find_phone_numbers(text: str) -> list:
+    pattern = r'(?:\(\d{3}\)\s?|\d{3}[.-]?)\d{3}[.-]?\d{4}'
+    return re.findall(pattern, text)
+
+
+# Example usage
+if __name__ == "__main__":
+    sample = "Call me at (123) 456-7890 or 123-456-7890, or 123.456.7890, or 1234567890."
+    print(find_phone_numbers(sample))
