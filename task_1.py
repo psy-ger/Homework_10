@@ -2,6 +2,15 @@ import re
 
 
 def is_valid_email(email: str) -> bool:
+    """
+    Проверяет, является ли email валидным по формату example@domain.com.
+
+    Args:
+        email (str): Email-адрес для проверки.
+
+    Returns:
+        bool: True, если email валидный, иначе False.
+    """
     pattern = r'^(?![.])[A-Za-z0-9.]+(?<![.])@[A-Za-z0-9]+\.[A-Za-z]{2,6}$'
     return bool(re.match(pattern, email))
 

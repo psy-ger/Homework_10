@@ -2,6 +2,15 @@ import re
 
 
 def is_strong_password(password: str) -> bool:
+    """
+    Проверяет, является ли пароль надёжным.
+
+    Args:
+        password (str): Пароль для проверки.
+
+    Returns:
+        bool: True, если пароль надёжный, иначе False.
+    """
     if len(password) < 8:
         return False
     if not re.search(r'[A-Z]', password):

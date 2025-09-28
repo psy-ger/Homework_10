@@ -2,9 +2,18 @@ import re
 
 
 def extract_ipv4(text: str) -> list:
+    """
+    Извлекает все валидные IPv4-адреса из текста.
+
+    Args:
+        text (str): Текст для поиска IP-адресов.
+
+    Returns:
+        list: Список найденных IPv4-адресов.
+    """
     pattern = r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
     ips = re.findall(pattern, text)
-    # Filter out invalid IPs (each octet <= 255)
+    # Оставляем только валидные IP
     valid_ips = []
     for ip in ips:
         if all(0 <= int(octet) <= 255 for octet in ip.split('.')):

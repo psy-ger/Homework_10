@@ -4,9 +4,13 @@ from collections import Counter
 
 def analyze_log_ip_stats(log_path: str) -> dict:
     """
-    Аналізує лог-файл веб-сервера та повертає статистику запитів по IP-адресах.
-    log_path: шлях до лог-файлу
-    return: словник {ip: count}
+    Анализирует лог-файл веб-сервера и возвращает статистику запросов по IP-адресам.
+
+    Args:
+        log_path (str): Путь к лог-файлу.
+
+    Returns:
+        dict: Словарь {ip: количество запросов}.
     """
     ip_pattern = r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
     counter = Counter()
